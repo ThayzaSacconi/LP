@@ -1,14 +1,12 @@
 package softwarelp;
 
 public class Pessoa {
-    String nome, email, endereco, profissao, CPF, telefone, dataNasc;
-    char sexo; // M - masculino ou F - feminino
+    String nome, email, profissao, CPF, telefone, dataNasc, sexo;
     
-    public Pessoa(String nome, String email, String endereco, String profissao, 
-                   String CPF, String telefone, char sexo, String dataNasc) {
+    public Pessoa(String nome, String email, String profissao, 
+                   String CPF, String telefone, String sexo, String dataNasc) {
         this.nome = nome;
         this.email = email;
-        this.endereco = endereco;
         this.profissao = profissao;
         this.CPF = CPF;
         this.telefone = telefone;
@@ -30,14 +28,6 @@ public class Pessoa {
     }
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    // --------------------- get e set de endereço
-    public String getEndereco() {
-        return endereco;
-    }
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
     }
 
     // --------------------- get e set de profissão
@@ -65,10 +55,10 @@ public class Pessoa {
     }
 
     // --------------------- get e set de sexo
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -81,14 +71,13 @@ public class Pessoa {
     }
     
     // --------------------- método para imprimir os dados do cliente do arquivo
-    public void imprimir() {
+   /* public void imprimir() {
         System.out.println("Nome: " + this.nome);
         System.out.println("E-mail: " + this.email);
-        System.out.println("Endereço: " + this.endereco);
         System.out.println("Profissão: " + this.profissao);
         System.out.println("Número do CPF: " + this.CPF);
         System.out.println("Telefone: " + this.telefone);
         System.out.println("Sexo: " + this.sexo);
         System.out.println("Data de nascimento: " + this.dataNasc);
-    }
+    }*/
 }

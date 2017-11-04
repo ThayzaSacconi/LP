@@ -14,11 +14,7 @@ public class SoftwareLP {
         } 
         else {
         
-            clientes.add(new Cliente("Thayza", "email", "endereco", "prof", "123901", "99699", 'F', "996", "senha", "123456"));
-            //clientes.add(new Cliente("ana frávia", "email", "endereco", "prof", "123901", "99699", 'F', "996", "senha", "123456"));
-            //clientes.add(new Cliente("ana", "email", "endereco", "prof", "123901", "99699", 'F', "996", "senha", "123456"));
-
-        }
+              }
         
         
         new Tela().setVisible(true);

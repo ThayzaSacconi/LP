@@ -3,15 +3,16 @@ package softwarelp;
 public class Cliente extends Pessoa {
     int idCod = 1;
     String senha, numConta;
-    double pontuacao;
+    double pontuacao, saldoCliente;
     
-    public Cliente(String nome, String email, String endereco, String profissao, 
-            String CPF, String telefone, char sexo, String dataNasc, String senha,
-            String numConta) {
-        super(nome, email, endereco, profissao, CPF, telefone, sexo, dataNasc);
+    public Cliente(String nome, String email, String profissao, 
+            String CPF, String telefone, String sexo, String dataNasc, String senha,
+            String numConta, Double saldoCliente) {
+        super(nome, email, profissao, CPF, telefone, sexo, dataNasc);
         this.idCod++;
         this.senha = senha;
         this.numConta = numConta;
+        this.saldoCliente = saldoCliente;
     }
 
     // --------------------- get e set de senha do cliente
@@ -29,25 +30,39 @@ public class Cliente extends Pessoa {
     public void setNumConta(String numConta) {
         this.numConta = numConta;
     }
-    
-    // --------------------- método para imprimir os dados do cliente do arquivo
-    @Override
-    public void imprimir() {
-        super.imprimir();
-        System.out.println("Senha: " + this.senha);
-        System.out.println("Num da conta: " + this.numConta);
-        System.out.println("Saldo: " + this.saldoCliente);
+
+    public int getIdCod() {
+        return idCod;
+    }
+
+    public void setIdCod(int idCod) {
+        this.idCod = idCod;
+    }
+
+    public double getPontuacao() {
+        return pontuacao;
+    }
+
+    public void setPontuacao(double pontuacao) {
+        this.pontuacao = pontuacao;
+    }
+
+    public double getSaldoCliente() {
+        return saldoCliente;
+    }
+
+    public void setSaldoCliente(double saldoCliente) {
+        this.saldoCliente = saldoCliente;
     }
     
     // --------------------- métodos de atividades possíveis para o cliente realizar no sistema do banco
-    double saldoCliente;
     public void depositar(double valor) { 
         this.saldoCliente += valor;       
     }
     
     public void sacar(double valor) {
         if (this.saldoCliente < valor) {
-            throw new SemSaldoException("Saldo insuficiente, tente um valor menor.");
+            throw new SemSaldoException();
         } 
         else 
             this.saldoCliente-=valor;
